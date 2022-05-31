@@ -27,8 +27,8 @@ public class PlaceService {
 
 		Position inputPosition = new Position(lat, lng);
 
-		Position northEastPosition = new Position(lat + ANGLE_OF_SEARCH_RANGE, lng + ANGLE_OF_SEARCH_RANGE);
-		Position southWestPosition = new Position(lat - ANGLE_OF_SEARCH_RANGE, lng - ANGLE_OF_SEARCH_RANGE);
+		Position northEastPosition = new Position(inputPosition.getLat() + ANGLE_OF_SEARCH_RANGE, inputPosition.getLng() + ANGLE_OF_SEARCH_RANGE);
+		Position southWestPosition = new Position(inputPosition.getLat() - ANGLE_OF_SEARCH_RANGE, inputPosition.getLng() - ANGLE_OF_SEARCH_RANGE);
 
 		List<Place> places = placeRepository.findByPosition(southWestPosition, northEastPosition);
 
