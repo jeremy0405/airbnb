@@ -17,9 +17,9 @@ spring:
   sql:
     init:
       data-locations:
-        - classpath:data.sql
+        - classpath:db/data.sql
       schema-locations:
-        - classpath:schema.sql
+        - classpath:db/schema.sql
       mode: always
       encoding: UTF-8
 

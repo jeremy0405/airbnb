@@ -1,6 +1,3 @@
-drop table if exists event;
-drop table if exists place;
-
 create table event
 (
     id          bigint          not null    auto_increment      comment '이벤트 PK',
