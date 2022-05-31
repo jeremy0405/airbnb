@@ -44,7 +44,7 @@ class EventAcceptanceTest {
 		.then()
 			.statusCode(HttpStatus.OK.value())
 			.assertThat()
-			.body("data[0].title", equalTo("슬기로운 자연생활"));
+			.body("data[0].title", equalTo("슬기로운\\n자연생활"));
 
 
 	}
@@ -60,7 +60,7 @@ class EventAcceptanceTest {
 		.then()
 			.statusCode(HttpStatus.OK.value())
 			.assertThat()
-			.body("data[0].title", equalTo("슬기로운 자연생활2"));
+			.body("data[0].title", equalTo("자연생활을 만끽할 수\\n있는 숙소"));
 	}
 
 }

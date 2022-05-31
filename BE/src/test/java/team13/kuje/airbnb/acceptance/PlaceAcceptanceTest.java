@@ -30,10 +30,10 @@ class PlaceAcceptanceTest {
 		given()
 			.accept(MediaType.APPLICATION_JSON_VALUE)
 
-			.when()
+		.when()
 			.get("/api/place?category_tag=map&lat=37.123123123123&lng=127.123123123123123")
 
-			.then()
+		.then()
 			.statusCode(HttpStatus.OK.value())
 			.assertThat()
 			.body("data[0].title", equalTo("서울"));
@@ -45,14 +45,16 @@ class PlaceAcceptanceTest {
 		given()
 			.accept(MediaType.APPLICATION_JSON_VALUE)
 
-			.when()
-			.get("/api/place?category_tag=map&lat=37.123123123123&lng=127.123123123123123")
+		.when()
+			.get("/api/place?category_tag=map")
 
-			.then()
+		.then()
 			.statusCode(HttpStatus.OK.value())
 			.assertThat()
 			.body("data[0].title", equalTo("서울"))
-			.body("data[0].time", equalTo("30m"));
+			.body("data[0].time", equalTo(0))
+			.body("data[1].title", equalTo("광주"))
+			.body("data[1].time", equalTo(21));
 
 	}
 
